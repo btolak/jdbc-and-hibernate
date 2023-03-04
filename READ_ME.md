@@ -3,3 +3,9 @@
 ### Useful git commands
 - git status -show what's going on repository
 - git log - show history
+
+
+
+### Merge types 
+- fast-forward 
+- 
