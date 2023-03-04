@@ -22,6 +22,9 @@ public class LambdaExercises {
         };
         anonymousClassReference.silnoreki();
 
+        // () parenthesis - arguments list
+        // -> arguments, body separator
+        // {} parenthesis - method body
         BoysDontCry firstLambda = () -> System.out.println("lambda silnoreki");
         firstLambda.silnoreki();
 
