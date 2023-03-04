@@ -33,6 +33,22 @@ public class LambdaExercises {
             System.out.println("second");
         };
 
+        System.out.println("--------------------");
+        System.out.println("Coffe time");
+
+        CoffeeMaker myCoffeeMaker= (int water ,String coffeType)-> "my coffee";
+        CoffeeMaker myCoffeeMaker2= (int water ,String coffeType)-> {
+            return "my coffee";
+        };
+        CoffeeMaker myCoffeeMaker3= (int water ,String coffeType)-> {
+            System.out.println("Coffee brewing...");
+            return "my coffee";
+        };
+
+        CoffeeMaker shortVersion = (water, coffeeType) -> "my coffee";
+
+        myCoffeeMaker3.prepare(3,"Black");
+        shortVersion.prepare(5,"White");
 
     }
 }
