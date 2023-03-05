@@ -10,4 +10,4 @@
 - fast-forward 
 - with merge commit
 
-??? conflict branches
+### Git workflow
