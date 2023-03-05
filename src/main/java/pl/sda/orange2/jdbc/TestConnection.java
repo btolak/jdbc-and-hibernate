@@ -19,9 +19,10 @@ public class TestConnection {
             System.out.println("got connection: " + (h2Connection != null));
             Statement queryStatement = h2Connection.createStatement();
             ResultSet queryResult = queryStatement.executeQuery(query);
-            System.out.println("id: " + queryResult.getInt(1));
-            System.out.println("name: " + queryResult.getString(2));
-        } catch (SQLException exc) {
+            while(queryResult.next()) {
+                System.out.println("id: " + queryResult.getInt(1));
+                System.out.println("name: " + queryResult.getString(2));
+            }} catch (SQLException exc) {
             System.out.println("got exception: " + exc);
         exc.printStackTrace();
         }
