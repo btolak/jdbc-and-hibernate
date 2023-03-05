@@ -9,3 +9,5 @@
 ### Merge types 
 - fast-forward 
 - with merge commit
+
+### Git workflow
