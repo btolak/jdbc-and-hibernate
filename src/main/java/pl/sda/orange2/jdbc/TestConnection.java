@@ -12,7 +12,7 @@ public class TestConnection {
                 select id,name
                 from test
                 """;
-
+        ResultSet queryResult= null;
         try {
             // we need jdbc driver (h2 dependency at pom)
             // connection gave us access to existing db
@@ -26,7 +26,7 @@ public class TestConnection {
 
             // ResultSet contains query result data as simple table
             // we need to iterate over result to got data
-            ResultSet queryResult = queryStatement.executeQuery(query);
+            queryResult = queryStatement.executeQuery(query);
             while (queryResult.next()) {
                 System.out.println("id: " + queryResult.getInt(1));
                 System.out.println("name: " + queryResult.getString(2));
@@ -35,6 +35,16 @@ public class TestConnection {
             System.out.println("got exception: " + exc);
             exc.printStackTrace();
         }
-    }
-}
+        finally {
+            System.out.println("It's done!");
+            if(queryResult!=null){
+                try {
+                    queryResult.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }}
+        System.out.println("The end!");
+
+}}
 
